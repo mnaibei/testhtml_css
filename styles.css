@@ -4,8 +4,11 @@
     border: 0;
 }
 
-.body{
-    font-size: 3.2vw;
+/* note: body tag does not start with period */
+body{
+    background-image: url('https://images.unsplash.com/photo-1550895030-823330fc2551?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=987&q=80');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .nav{
@@ -15,6 +18,7 @@
     gap: 2px;
     flex-wrap: wrap;
     justify-content:space-around;
+    background-color: blanchedalmond;
 }
 
 .search{
@@ -22,7 +26,25 @@
     align-items: flex-end;
 }
 
+/*fixes issue where aside extended beyond border*/
+@media (min-width: 200px) { 
+    .text-1 aside{
+        max-width: fit-content;
+    }
+
+    .text-3 aside{
+        max-width: fit-content;
+    }
+
+    .text-5 aside{
+        max-width: fit-content;
+        max-height: fit-content;
+    }
+}
+
 .text{
+    display: flex;
+    flex-direction: column;
     margin: .5em;
     padding: .5em;
     word-wrap: break-word;
@@ -30,9 +52,12 @@
     text-align: justify;
 }
 
+/* makes all blocks equal in shape */
+.text > *{
+    flex: 1;
+}
+
 .text-1{
-    display: flex;
-    flex-direction: column;
     align-items: flex-end;
     flex-wrap: wrap;
     font-family: 'Courier New', Courier, monospace;
@@ -40,7 +65,6 @@
 }
 
 .text-1 aside{
-    flex: 1;
     color: red;
     background-color: beige;
     border: 2px solid black;
@@ -59,15 +83,13 @@
 
 .text-2{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: aqua;
+    color:chocolate
 }
 
 .text-3{
-    display: flex;
-    flex-direction: column;
     align-items: flex-start;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    color: bisque;
+    color: brown;
 }
 
 .text-3 aside{
@@ -78,7 +100,7 @@
     margin: .5em;
     word-wrap: break-word;
     font-weight: bold;
-    text-align: left;
+    text-align: center;
     width: 500px;
     height: 100px;
     float: left;
@@ -94,4 +116,11 @@
 
 .text-5{
     font-family: cursive;
+}
+
+.text-5 aside{
+    border: 2px solid red;
+    padding: .5em;
+    margin: .5em;
+    
 }
